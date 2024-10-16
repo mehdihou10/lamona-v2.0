@@ -1,17 +1,25 @@
 "use client";
 
-import { Header, Products,Hero } from "@/components";
+import { PageLoading } from "@/components";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
+
+  const router = useRouter();
+
+
+  useEffect(()=>{
+
+    router.push('/products');
+  },[])
 
 
   return (
     <div>
 
-      <Header />
-      <Hero />
-     <Products />
+      <PageLoading />
     </div>
   );
 }

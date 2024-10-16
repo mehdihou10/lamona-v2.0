@@ -5,7 +5,7 @@ import { NextResponse } from "next/server"
 /**
  * @swagger
  * /api/products:
- *   get:
+ *   post:
  *     tags:
  *       - Product APIs 
  *     summary: Get All Products
@@ -35,13 +35,13 @@ import { NextResponse } from "next/server"
  *                 
  */
 
-export const GET = async(req)=>{
+export const POST = async(req)=>{
 
     try{
 
         const products = await pool`SELECT * FROM product ORDER BY orders DESC`;
 
-        return NextResponse.json({status: httpStatus.SUCCESS, products});
+        return NextResponse.json({ status: 'success', products });
 
     } catch(err){
 
