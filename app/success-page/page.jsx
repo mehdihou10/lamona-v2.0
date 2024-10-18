@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {useCookies} from 'react-cookie';
+import successImage from '@/images/success.png';
 
 
 const SuccessPage = () => {
@@ -14,7 +15,7 @@ const SuccessPage = () => {
     <div className='flex flex-col items-center mt-[100px]'>
 
         <Image
-        src="/images/success.png"
+        src={successImage}
         width={230}
         height={230}
         alt='success'

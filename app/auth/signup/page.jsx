@@ -13,6 +13,7 @@ import { verifyAuth } from "@/store/slices/auth";
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/navigation';
 import { expirationDate } from "@/utils/cookie.expiration";
+import emailImage from '@/images/email.png';
 
 
 
@@ -145,7 +146,7 @@ const Signup = () => {
     <div className="flex flex-col justify-center items-center h-[100vh] px-[20px]">
 
       <Image
-      src="/images/email.png"
+      src={emailImage}
       width={150}
       height={150}
       alt="email"
