@@ -7,13 +7,11 @@ import { useState,useMemo } from "react";
 import { IoMdEye,IoMdEyeOff  } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { verifyAuth } from "@/store/slices/auth";
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/navigation';
 import { expirationDate } from "@/utils/cookie.expiration";
-import emailImage from '@/images/email.png';
 
 
 
@@ -145,8 +143,8 @@ const Signup = () => {
 
     <div className="flex flex-col justify-center items-center h-[100vh] px-[20px]">
 
-      <Image
-      src={emailImage}
+      <img
+      src="/images/email.png"
       width={150}
       height={150}
       alt="email"
