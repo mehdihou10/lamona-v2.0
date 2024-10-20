@@ -55,14 +55,34 @@ const Signup = () => {
 
         const data = await res.json();
 
-        setLoader(false);
-
 
         if(data.status === httpStatus.SUCCESS){
 
-          setShowConfirmationPage(true);
+          (
+            async function(){
+
+              try{
+
+                const res = await fetch("/api/auth/email",{
+                  method: "POST",
+                  body: JSON.stringify({email: userData.email, code})
+                });
+
+                setLoader(false);
+
+                if(res.ok){
+                  setShowConfirmationPage(true);
+                }
+
+              } catch(err){
+                console.log(err)
+              }
+            }
+          )()
 
         } else{
+
+          setLoader(false);
 
           const errors = data.message;
 

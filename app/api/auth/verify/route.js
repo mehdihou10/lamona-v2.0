@@ -90,12 +90,12 @@ export const POST = async(req)=>{
 
         }
 
-        const html = `
-        <p>Please Copy This Code:</p>
-        <h3 style='width: fit-content; padding: 10px 20px; background: #ccc'>${body.code}</h3>
-        `
+        // const html = `
+        // <p>Please Copy This Code:</p>
+        // <h3 style='width: fit-content; padding: 10px 20px; background: #ccc'>${body.code}</h3>
+        // `
 
-        sendEmail(html,body.email,"Email Verification");
+        // sendEmail(html,body.email,"Email Verification");
 
         return NextResponse.json({status: httpStatus.SUCCESS});
 
